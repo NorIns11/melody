@@ -1,28 +1,26 @@
 <template>
   <div class="container-rank">
-    <!-- 封面 -->
-    <div class="covers">
-      <img :src="songlist[0].picBig" alt="">
+    <div class="hint">
+      <p>找到 {{ searchResult.length }} 条与“{{ message }}”相关的音乐</p>
     </div>
-    <!-- 歌曲 -->
     <div class="all-list">
-      <div class="all-1" v-for="(item,index) in songlist" :key="index">
+      <div class="all-1" v-for="(item,index) in searchResult" :key="index">
         <div class="numbers">
           {{ index+1 }}
         </div>
         <div class="all-12" @click="_songPlay(item.songId)">
-          <div class="text-15"><nobr>{{ item.title }}</nobr></div>
-          <div class="text-13"><nobr>{{ item.author }}</nobr></div>
+          <div class="text-15"><nobr>{{ item.songName }}</nobr></div>
+          <div class="text-13"><nobr>{{ item.artistName }}</nobr></div>
         </div>
       </div>
     </div>
-    <div class="blank"></div>
+    <!-- <div class="blank"></div> -->
     <foot :isPlay="isPlay" :titleNow="titleNow" :authorNow="authorNow" :pic="pic" :songidNow="songidNow"></foot>
     </div>
 </template>
 
 <script>
-import { getRank, playMusic } from '@/api/all'
+import { searchByKey, playMusic } from '@/api/all'
 import foot from '@/components/footer'
 
 export default{
@@ -36,18 +34,20 @@ export default{
       songidNow: '',
       titleNow: '',
       authorNow: '',
-      pic: ''
+      pic: '',
+      searchResult: '',
+      searchMsg: '',
+      message: ''
     };
   },
   components :{
     foot
   },
   methods:{
-    _getRank (type,num) {
-      getRank(type,num).then((res) => {
-        if (res.code === 1) {
-          this.songlist= res.data
-        }
+    _search () {
+      searchByKey(this.searchMsg).then((res) => {
+        console.log(res)
+        this.searchResult = res.data
       })
     },
     getPlaying (songid) {
@@ -96,6 +96,10 @@ export default{
     this.titleNow =  options.title
     this.authorNow = options.author
     this.pic = options.pic
+    this.message = options.message
+    this.searchMsg = encodeURI(encodeURI(this.message))
+    this._search()
+
     // wx.onBackgroundAudioPlay(function() {
     //   that.isPlay = true
     //   that.GLOBAL.isPlay = true
@@ -108,18 +112,25 @@ export default{
     //   that.isPlay = false
     //   that.GLOBAL.isPlay = false
     // })
-  },
+  }/*,
   created(){ 
-    this._getRank(1,20)
-  }  
+    this._getRank(2,20)
+  }  */
 }
 </script>
 
 <style scoped>
 .container-rank{
+  box-sizing: border-box;
   width: 100%;
+  height: 100%;
   color: #fff;
   font-family:SimSun;
+}
+.hint {
+  padding: 4px 6px;
+  background: rgb(43, 44, 46);
+  font-size: 15px;
 }
 .covers{
   padding: 0;
@@ -127,13 +138,21 @@ export default{
 }
 .covers img{
   width: 100%;
-  height: 300px;
 }
-.all-1{
-  display: -webkit-box;
+
+.all-list{
+  height: 100%;
+  min-height: 550px;
   opacity:0.8;
   filter:alpha(opacity=80);
   background:rgb(43, 44, 46);
+}
+
+.all-1{
+  display: -webkit-box;
+  /* opacity:0.8;
+  filter:alpha(opacity=80);
+  background:rgb(43, 44, 46); */
   /* background: rgb(134, 126, 126);
   opacity: 0.7; */
 }

@@ -1,4 +1,60 @@
 
-.card {
-  padding: 20rpx;
+._audio {
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+.iconfont {
+  font-size: 56rpx;
+  margin: 0 16rpx;
+  color: #fff;
+}
+.icon-play,
+.icon-stop {
+  font-size: 80rpx;
+}
+.foot {
+  position: fixed;
+  z-index: 5;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 16rpx;
+  background-color: #0e1313;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+}
+.cover {
+  height: 88rpx;
+  border-radius: 8rpx;
+}
+.cover ._img {
+  height: 88rpx;
+  width: 88rpx;
+}
+.baseMsg {
+  width: 300rpx;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.song {
+  font-size: 32rpx;
+  line-height: 50rpx;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.singer {
+  color: rgb(116, 112, 112);
+  font-size: 26rpx;
+  line-height: 36rpx;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

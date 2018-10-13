@@ -6,6 +6,6 @@ app.$mount()
 
 export default {
   config: {
-    navigationBarTitleText: '播放页面'
+    navigationBarTitleText: '播放'
   }
 }

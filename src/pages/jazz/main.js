@@ -6,6 +6,6 @@ app.$mount()
 
 export default {
   config: {
-    navigationBarTitleText: '网络歌曲榜'
+    navigationBarTitleText: '爵士榜'
   }
 }

@@ -10,7 +10,7 @@
 	"miniprogramRoot": "./dist/",
 	"compileType": "miniprogram",
 	"appid": "touristappid",
-	"projectname": "melody",
+	"projectname": "demo",
 	"condition": {
 		"search": {
 			"current": -1,

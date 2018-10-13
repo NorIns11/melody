@@ -1,3 +1,4 @@
+
 <template>
   <div class="container-rank">
     <!-- 封面 -->
@@ -110,7 +111,7 @@ export default{
     // })
   },
   created(){ 
-    this._getRank(1,20)
+    this._getRank(12,20)
   }  
 }
 </script>

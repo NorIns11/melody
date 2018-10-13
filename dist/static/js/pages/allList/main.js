@@ -1,224 +1,20 @@
-global.webpackJsonp([15],{
+global.webpackJsonp([12],{
 
-/***/ 115:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__index__ = __webpack_require__(81);
-
-
-
-var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MODULE_1__index__["a" /* default */]);
-app.$mount();
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-  config: {
-    navigationBarTitleText: '全部歌单'
-  }
-});
-
-/***/ }),
-
-/***/ 135:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__api_rank__ = __webpack_require__(8);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-
-
-/* harmony default export */ __webpack_exports__["a"] = ({
-  name: 'allList',
-  data: function data() {
-    return {
-      bannerType: 1,
-      street: '',
-      songnameMsg: '病变', // 数组中获取
-      singerMsg: '鞠文娴', // 数组中获取
-      songlist: []
-    };
-  },
-  methods: {
-    _getPopular: function _getPopular() {
-      var _this = this;
-
-      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__api_rank__["a" /* getPopular */])().then(function (res) {
-        if (res.code === 1) {
-          _this.songlist = res.data.a;
-        }
-      });
-    },
-    _songPlay: function _songPlay(songid, title, author) {
-      this.$router.push({
-        name: 'Playing',
-        params: {
-          songid: songid,
-          title: title,
-          author: author
-        }
-      });
-    }
-  },
-  created: function created() {
-    this._getPopular();
-  }
-});
-
-/***/ }),
-
-/***/ 199:
+/***/ 133:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 223:
+/***/ 147:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: "container-collected"
-  }, [_c('header', {
-    staticClass: "all-header"
-  }, [_c('router-link', {
-    staticClass: "back",
-    attrs: {
-      "to": "/",
-      "mpcomid": '0'
-    }
-  }, [_c('i', {
-    staticClass: "iconfont icon-back"
-  })], 1), _vm._v(" "), _c('div', {
-    staticClass: "text-title"
-  }, [_vm._v("歌单")]), _vm._v(" "), _c('div', {
-    staticClass: "blank-right"
-  }, [_vm._v(" ")])], 1), _vm._v(" "), _c('div', {
-    staticClass: "blank-6"
-  }), _vm._v(" "), _vm._m(0), _vm._v(" "), _c('div', {
+    staticClass: "container-popular"
+  }, [_vm._m(0), _vm._v(" "), _c('div', {
     staticClass: "all-list"
   }, _vm._l((_vm.songlist), function(item, index) {
     return _c('div', {
@@ -226,65 +22,51 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
       staticClass: "all-1"
     }, [_c('div', {
       staticClass: "numbers"
-    }, [_vm._v("\n              " + _vm._s(index + 1) + "\n            ")]), _vm._v(" "), _c('div', {
+    }, [_vm._v("\n        " + _vm._s(index + 1) + "\n      ")]), _vm._v(" "), _c('div', {
       staticClass: "all-12",
       attrs: {
         "eventid": '0-' + index
       },
       on: {
         "click": function($event) {
-          _vm._songPlay(item.songid, item.title, item.author)
+          _vm._songPlay(item.songid)
         }
       }
     }, [_c('div', {
-      staticClass: "text-12"
+      staticClass: "text-15"
+    }, [_c('nobr', {
+      attrs: {
+        "mpcomid": '0-' + index
+      }
+    }, [_vm._v(_vm._s(item.title))])], 1), _vm._v(" "), _c('div', {
+      staticClass: "text-13"
     }, [_c('nobr', {
       attrs: {
         "mpcomid": '1-' + index
       }
-    }, [_vm._v(_vm._s(item.title))])], 1), _vm._v(" "), _c('div', {
-      staticClass: "text-10"
-    }, [_c('nobr', {
+    }, [_vm._v(_vm._s(item.author))])], 1), _vm._v(" "), _c('child', {
       attrs: {
+        "title": _vm.title,
         "mpcomid": '2-' + index
       }
-    }, [_vm._v(_vm._s(item.author))])], 1)])])
+    }), _vm._v(" "), _c('child', {
+      attrs: {
+        "author": _vm.author,
+        "mpcomid": '3-' + index
+      }
+    })], 1)])
   })), _vm._v(" "), _c('div', {
     staticClass: "blank"
-  }), _vm._v(" "), _c('footer', {
-    staticClass: "footer2"
-  }, [_c('router-link', {
+  }), _vm._v(" "), _c('foot', {
     attrs: {
-      "to": "/playing",
-      "mpcomid": '3'
-    }
-  }, [_c('div', {
-    staticClass: "cover"
-  }, [_c('img', {
-    attrs: {
-      "src": "@/img/cover.jpg",
-      "alt": ""
-    }
-  })])]), _vm._v(" "), _c('router-link', {
-    attrs: {
-      "to": "/playing",
+      "isPlay": _vm.isPlay,
+      "titleNow": _vm.titleNow,
+      "authorNow": _vm.authorNow,
+      "pic": _vm.pic,
+      "songidNow": _vm.songidNow,
       "mpcomid": '4'
     }
-  }, [_c('div', {
-    staticClass: "baseMsg"
-  }, [_c('div', {
-    staticClass: "song"
-  }, [_vm._v(_vm._s(_vm.songnameMsg))]), _vm._v(" "), _c('div', {
-    staticClass: "singer"
-  }, [_vm._v(_vm._s(_vm.singerMsg))])])]), _vm._v(" "), _c('div', {
-    staticClass: "btns"
-  }, [_c('i', {
-    staticClass: "iconfont icon-pre"
-  }), _vm._v(" "), _c('i', {
-    staticClass: "iconfont icon-stop"
-  }), _vm._v(" "), _c('i', {
-    staticClass: "iconfont icon-next"
-  })], 1)], 1)], 1)
+  })], 1)
 }
 var staticRenderFns = [function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
@@ -302,22 +84,22 @@ var esExports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-7512415b", esExports)
+     require("vue-hot-reload-api").rerender("data-v-c565e2c8", esExports)
   }
 }
 
 /***/ }),
 
-/***/ 81:
+/***/ 46:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_mpvue_loader_lib_selector_type_script_index_0_index_vue__ = __webpack_require__(135);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_mpvue_loader_lib_template_compiler_index_id_data_v_7512415b_hasScoped_true_transformToRequire_video_src_source_src_img_src_image_xlink_href_node_modules_mpvue_loader_lib_selector_type_template_index_0_index_vue__ = __webpack_require__(223);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_mpvue_loader_lib_selector_type_script_index_0_index_vue__ = __webpack_require__(74);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_mpvue_loader_lib_template_compiler_index_id_data_v_c565e2c8_hasScoped_true_transformToRequire_video_src_source_src_img_src_image_xlink_href_node_modules_mpvue_loader_lib_selector_type_template_index_0_index_vue__ = __webpack_require__(147);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(199)
+  __webpack_require__(133)
 }
 var normalizeComponent = __webpack_require__(1)
 /* script */
@@ -327,12 +109,12 @@ var normalizeComponent = __webpack_require__(1)
 /* styles */
 var __vue_styles__ = injectStyle
 /* scopeId */
-var __vue_scopeId__ = "data-v-7512415b"
+var __vue_scopeId__ = "data-v-c565e2c8"
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
   __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_mpvue_loader_lib_selector_type_script_index_0_index_vue__["a" /* default */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_mpvue_loader_lib_template_compiler_index_id_data_v_7512415b_hasScoped_true_transformToRequire_video_src_source_src_img_src_image_xlink_href_node_modules_mpvue_loader_lib_selector_type_template_index_0_index_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_mpvue_loader_lib_template_compiler_index_id_data_v_c565e2c8_hasScoped_true_transformToRequire_video_src_source_src_img_src_image_xlink_href_node_modules_mpvue_loader_lib_selector_type_template_index_0_index_vue__["a" /* default */],
   __vue_styles__,
   __vue_scopeId__,
   __vue_module_identifier__
@@ -348,9 +130,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-7512415b", Component.options)
+    hotAPI.createRecord("data-v-c565e2c8", Component.options)
   } else {
-    hotAPI.reload("data-v-7512415b", Component.options)
+    hotAPI.reload("data-v-c565e2c8", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -360,7 +142,114 @@ if (false) {(function () {
 /* harmony default export */ __webpack_exports__["a"] = (Component.exports);
 
 
+/***/ }),
+
+/***/ 58:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__index__ = __webpack_require__(46);
+
+
+
+var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MODULE_1__index__["a" /* default */]);
+app.$mount();
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  config: {
+    navigationBarTitleText: '全部歌单'
+  }
+});
+
+/***/ }),
+
+/***/ 74:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__api_rank__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_footer__ = __webpack_require__(4);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+
+/* harmony default export */ __webpack_exports__["a"] = ({
+  name: "allList",
+  components: {
+    foot: __WEBPACK_IMPORTED_MODULE_1__components_footer__["a" /* default */]
+  },
+  data: function data() {
+    return {
+      bannerType: 1,
+      street: '',
+      songlist: [],
+      songidNow: '',
+      titleNow: '',
+      authorNow: '',
+      pic: '',
+      isPlay: false
+    };
+  },
+  methods: {
+    _getPopular: function _getPopular() {
+      var _this = this;
+
+      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__api_rank__["a" /* getPopular */])().then(function (res) {
+        if (res.code === 1) {
+          _this.songlist = res.data.a;
+          titleMsg = songlist.title;
+        }
+      });
+    },
+    _songPlay: function _songPlay(songid) {
+      this.songidNow = songid;
+      this.isPlay = true;
+    }
+  },
+  onShow: function onShow() {
+    this.isPlay = this.GLOBAL.isPlay;
+  },
+  onLoad: function onLoad(options) {
+    this.isPlay = this.GLOBAL.isPlay;
+    this.songidNow = options.songid;
+    this.titleNow = options.title;
+    this.authorNow = options.author;
+    this.pic = options.pic;
+  },
+  created: function created() {
+    this._getPopular();
+  }
+});
+
 /***/ })
 
-},[115]);
+},[58]);
 //# sourceMappingURL=main.js.map

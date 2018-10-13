@@ -1,182 +1,140 @@
 <template>
   <div class="container-ranking">
-    <!-- 头部 -->
-    <header class="all-header">
-      <router-link class="back" to="/">
-				<i class="iconfont icon-back"></i>
-    	</router-link>
-      <div class="text-title">排行榜</div>
-      <div class="blank-right">&nbsp;</div> 
-    </header>
-    <div class="blank-7"></div>
-<!-- <div class="my-rank" ref="rankRef"> -->
-    <!-- 排行榜数据 -->
-    <!-- <scroll class="toplist" ref="scrollRef" :data="toplist"> -->
-      <!-- <ul>
-        <li class="item" v-for="item in toplist" @click="selectItem(item)"> -->
-          <!-- 左图 -->
-          <!-- <div class="icon">
-            <img width="100" height="100" v-lazy="item.picUrl" @load="loadImg">
-          </div> -->
-    
-          <!-- 右歌 -->
-          <!-- <ul class="songlist">
-            <h3 class="title">{{ item.topTitle }}</h3>
-            <li class="song" v-for="(song, index) in item.songList">
-              <span>{{ index + 1 }}</span>
-              <span>{{ song.songname }}</span>
-              <span class="singername"> - {{ song.singername }}</span>
-            </li>
-          </ul>
-        </li>
-      </ul> -->
-    <!-- </scroll> -->
-    <!-- <router-view></router-view> -->
-  <!-- </div> -->    
-    <div class="ranking-list">      
-      <!-- 流行榜 -->
-      <router-link class="back" to="/popular">
-        <div class="ranking-1">
-          <div class="ranking-11">
-            <img src="http://y.gtimg.cn/music/common/upload/iphone_order_channel/toplist_4_300_212984792.jpg" alt="">
-          </div>
-          <div class="ranking-r">
-            <div class="ranking-12" v-for="(item1,index1) in songlist1" :key="index1" v-show="index1 < 3">
-              <div class="text-12"><nobr>{{ index1 +1 }}.{{ item1.title }}&nbsp;-&nbsp;{{ item1.author }}</nobr></div>          
-            </div>
-          </div>
-        </div>
-      </router-link>  
+    <div class="background">
+      <img src="http://p6jceeddp.bkt.clouddn.com/star1.png" alt="">
+    </div>
+    <div class="ranking-list">
       <!-- 热歌榜 -->
-      <router-link class="back" to="/hot">
-        <div class="ranking-1">
-          <div class="ranking-11">
-            <img src="http://y.gtimg.cn/music/common/upload/iphone_order_channel/toplist_26_300_212606735.jpg" alt="">
+      <navigator :url="'../hot/main?title='+titleNow+'&author='+authorNow+'&songid='+songidNow+'&pic='+pic" hover-class="none">
+        <div class="ranking">
+          <div class="ranking-img">
+            <img :src="songlist2[0].picBig" alt="">
           </div>
           <div class="ranking-r">
-            <div class="ranking-12" v-for="(item2,index2) in songlist2" :key="index2" v-show="index2 < 3">
+            <div class="ranking-12" v-for="(item2,index2) in songlist2" :key="index2">
               <div class="text-12"><nobr>{{ index2 +1 }}.{{ item2.title }}&nbsp;-&nbsp;{{ item2.author }}</nobr></div>          
             </div>
           </div>
         </div>
-      </router-link>
+      </navigator>
         <!-- 新歌榜 -->
-        <router-link class="back" to="/new">
-        <div class="ranking-1">
-          <div class="ranking-11">
-              <img src="http://y.gtimg.cn/music/common/upload/iphone_order_channel/toplist_27_300_212984792.jpg" alt="">
+      <navigator :url="'../new/main?title='+titleNow+'&author='+authorNow+'&songid='+songidNow+'&pic='+pic" hover-class="none">
+        <div class="ranking">
+          <div class="ranking-img">
+              <img :src="songlist3[0].picBig" alt="">
           </div>
           <div class="ranking-r">
-            <div class="ranking-12" v-for="(item3,index3) in songlist3" :key="index3" v-show="index3 < 3">
+            <div class="ranking-12" v-for="(item3,index3) in songlist3" :key="index3">
               <div class="text-12"><nobr>{{ index3 +1 }}.{{ item3.title }}&nbsp;-&nbsp;{{ item3.author }}</nobr></div>          
             </div>
           </div>
         </div>
-      </router-link>
+      </navigator>
       <!-- 网络歌曲榜 -->
-      <router-link class="back" to="/online">
-        <div class="ranking-1">
-          <div class="ranking-11">
-            <img src="http://y.gtimg.cn/music/common/upload/iphone_order_channel/toplist_28_300_212437019.jpg" alt="">
+      <navigator :url="'../online/main?title='+titleNow+'&author='+authorNow+'&songid='+songidNow+'&pic='+pic" hover-class="none">
+        <div class="ranking">
+          <div class="ranking-img">
+            <img :src="songlist4[0].picBig" alt="">
           </div>
           <div class="ranking-r">
-            <div class="ranking-12" v-for="(item4,index4) in songlist4" :key="index4" v-show="index4 < 3">
+            <div class="ranking-12" v-for="(item4,index4) in songlist4" :key="index4">
               <div class="text-12"><nobr>{{ index4 +1 }}.{{ item4.title }}&nbsp;-&nbsp;{{ item4.author }}</nobr></div>          
             </div>
           </div>
         </div>
-      </router-link>
+      </navigator>
       <!-- 欧美歌曲榜 -->
-      <router-link class="back" to="/euramerican">
-        <div class="ranking-1">
-          <div class="ranking-11">
-            <img src="http://y.gtimg.cn/music/common/upload/iphone_order_channel/toplist_3_300_212913234.jpg" alt="">
+      <navigator :url="'../euramerican/main?title='+titleNow+'&author='+authorNow+'&songid='+songidNow+'&pic='+pic" hover-class="none">
+        <div class="ranking">
+          <div class="ranking-img">
+            <img :src="songlist5[0].picBig" alt="">
           </div>
           <div class="ranking-r">
-            <div class="ranking-12" v-for="(item5,index5) in songlist5" :key="index5" v-show="index5 < 3">
+            <div class="ranking-12" v-for="(item5,index5) in songlist5" :key="index5">
               <div class="text-12"><nobr>{{ index5 +1 }}.{{ item5.title }}&nbsp;-&nbsp;{{ item5.author }}</nobr></div>        
             </div>
           </div>
         </div>
-      </router-link>
+      </navigator>
+      <!-- 爵士榜 -->
+      <navigator :url="'../jazz/main?title='+titleNow+'&author='+authorNow+'&songid='+songidNow+'&pic='+pic" hover-class="none">
+        <div class="ranking">
+          <div class="ranking-img">
+            <img :src="songlist1[0].picBig" alt="">
+          </div>
+          <div class="ranking-r">
+            <div class="ranking-12" v-for="(item1,index1) in songlist1" :key="index1">
+              <div class="text-12"><nobr>{{ index1 +1 }}.{{ item1.title }}&nbsp;-&nbsp;{{ item1.author }}</nobr></div>          
+            </div>
+          </div>
+        </div>
+      </navigator>  
     </div>
     <!-- 这里是footer -->        
-  <!-- <div class="blank-5"></div> -->
-	<footer class="footer2">
-        <router-link to="/playing">
-          <div class="cover">
-            <img src="@/img/cover.jpg" alt="">
-          </div>
-        </router-link>
-        <router-link to="/playing">
-          <div class="baseMsg">
-            <div class="song">{{songnameMsg}}</div>
-            <div class="singer">{{singerMsg}}</div>
-          </div>
-        </router-link>
-        <div class="btns">
-          <!-- <i class="iconfont icon-pre" @click="preChange"></i>
-          <i class="iconfont icon-stop" @click="stateChange"></i>
-          <i class="iconfont icon-next" @click="nextChange"></i> -->
-          <i class="iconfont icon-pre"></i>
-          <i class="iconfont icon-stop"></i>
-          <i class="iconfont icon-next"></i>
-        </div>
-    </footer> 
+    <foot :isPlay="isPlay" :titleNow="titleNow" :authorNow="authorNow" :pic="pic" :songidNow="songidNow"></foot>
     </div>
 </template> 
 
 <script>
-import { getPopular, getHot, getBill, getOnline, getEuramerican } from '@/api/rank'
+import { getRank } from '@/api/all'
+import foot from '@/components/footer'
 
 export default{
-  name: 'ranking',
-  data: function () {
-    return {
+  name:"ranking" ,
+  data:function () {
+    return{
       bannerType: 1,
-      street: '',
-      songnameMsg: '病变', // 数组中获取
-      singerMsg: '鞠文娴', // 数组中获取
+      street: "",
+      songnameMsg: '病变', //数组中获取
+      singerMsg: '鞠文娴', //数组中获取
       songlist1: [],
       songlist2: [],
       songlist3: [],
       songlist4: [],
-      songlist5: []
-    }
+      songlist5: [],
+      isPlay: false,
+      songidNow: '',
+      titleNow: '',
+      authorNow: '',
+      pic: ''
+    };
   },
-  methods: {
-    _getPopular () {
-      getPopular().then((res) => {
+  components :{
+    foot
+  },
+  methods:{
+    _getJazz () {
+      getRank(12,3).then((res) => {
         if (res.code === 1) {
-          this.songlist1 = res.data.a
+          this.songlist1= res.data
         }
       })
     },
     _getHot () {
-      getHot().then((res) => {
+      getRank(2,3).then((res) => {
         if (res.code === 1) {
-          this.songlist2 = res.data.a
+          this.songlist2 = res.data
         }
       })
     },
     _getBill () {
-      getBill().then((res) => {
+      getRank(1,3).then((res) => {
         if (res.code === 1) {
-          this.songlist3 = res.data.a
+          this.songlist3 = res.data
         }
       })
     },
     _getOnline () {
-      getOnline().then((res) => {
+      getRank(25,3).then((res) => {
         if (res.code === 1) {
-          this.songlist4 = res.data.a
+          this.songlist4 = res.data
         }
       })
     },
     _getEuramerican () {
-      getEuramerican().then((res) => {
+      getRank(21,3).then((res) => {
         if (res.code === 1) {
-          this.songlist5 = res.data.a
+          this.songlist5 = res.data
         }
       })
     }
@@ -184,16 +142,93 @@ export default{
     //   this.playing = !this.playing
     // }
   },
-  created () {
-    this._getPopular()
-    this._getHot()
-    this._getBill()
-    this._getOnline()
-    this._getEuramerican()
-  }
+  // onShow: function() {
+  //   this.isPlay = this.GLOBAL.isPlay
+  // },
+  onShow: function() {
+    this.isPlay = this.GLOBAL.isPlay
+    this.songidNow = this.GLOBAL.songidNow
+    this.titleNow = this.GLOBAL.titleNow
+    this.authorNow = this.GLOBAL.authorNow
+    this.pic = this.GLOBAL.pic
+  },
+  onLoad: function(options) {
+    this.isPlay = this.GLOBAL.isPlay
+    this.songidNow = options.songid
+    this.titleNow =  options.title
+    this.authorNow = options.author
+    this.pic = options.pic
+    // wx.onBackgroundAudioPlay(function() {
+    //   that.isPlay = true
+    //   that.GLOBAL.isPlay = true
+    // })
+    // wx.onBackgroundAudioPause(function() {
+    //   that.isPlay = false
+    //   that.GLOBAL.isPlay = false
+    // })
+    // wx.onBackgroundAudioStop(function() {
+    //   that.isPlay = false
+    //   that.GLOBAL.isPlay = false
+    // })
+  },
+  created(){ 
+    this._getJazz();
+    this._getHot();
+    this._getBill();
+    this._getOnline();
+    this._getEuramerican();
+  }  
 }
 </script>
 
 <style scoped>
-@import "../../../font/iconfont.css";
+.container-ranking{
+  width: 100%;
+  color: #fff;
+  font-family:SimSun;
+}
+.covers img{
+  width: 100%;
+  height: 300px;
+}
+.background{
+  position: absolute;
+  top: 0;
+  z-index: -100;
+  width: 100%;
+}
+.background img{
+  width: 100%;
+  height: 570px;
+}
+.ranking-list{
+  width: 100%;
+  height: auto;
+}
+.ranking{
+  display: flex;
+  justify-content: space-between;
+  width: 84%;
+  margin: 32rpx 8%;
+  background: rgb(73, 71, 71);
+  opacity: 0.7;
+}
+.ranking-img{
+  height: 90px;
+  width: 90px;  
+}
+.ranking-img img{
+  height: 90px;
+  width: 90px;
+}
+.ranking-r{
+  width: 68%;
+}
+.text-12{
+  font-size: 16px;
+  line-height: 30px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
 </style>

@@ -6,6 +6,6 @@ app.$mount()
 
 export default {
   config: {
-    navigationBarTitleText: '收藏歌单'
+    navigationBarTitleText: '收藏'
   }
 }

@@ -1,25 +1,21 @@
 {
   "pages": [
-    "pages/login/main",
-    "pages/allList/main",
+    "pages/index/main",
     "pages/collected/main",
-    "pages/counter/main",
     "pages/euramerican/main",
     "pages/hot/main",
-    "pages/index/main",
+    "pages/jazz/main",
     "pages/logs/main",
-    "pages/my/main",
     "pages/new/main",
     "pages/online/main",
     "pages/playing/main",
-    "pages/popular/main",
     "pages/ranking/main",
-    "pages/register/main"
+    "pages/searchResult/main"
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
+    "navigationBarBackgroundColor": "#141919",
     "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "#fff"
   }
 }
