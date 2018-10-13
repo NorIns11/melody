@@ -1,0 +1,40 @@
+<template name="index$2018979c">
+  <view class="_div data-v-dd596a06 container-login">
+    <view class="_div data-v-dd596a06 bg-pic">
+      <image src="http://p3gbjsikb.bkt.clouddn.com/img/bg/bg-2.jpg" alt class="_img data-v-dd596a06"></image>
+    </view>
+    <view class="_div data-v-dd596a06 back-x">
+      <view class="_div data-v-dd596a06 back2">
+        <view class="_i data-v-dd596a06 iconfont icon-back2"></view>
+      </view>
+    </view>
+    <view class="_div data-v-dd596a06 list-block">
+      <view class="_ul data-v-dd596a06">
+        <view class="_p data-v-dd596a06 title">注 册</view>
+        <view class="_li data-v-dd596a06">
+          <view class="_div data-v-dd596a06 item-input">
+            <input type="text" id="nickname" placeholder="用户名" value class="_input data-v-dd596a06" />
+          </view>
+        </view>
+        <view class="_li data-v-dd596a06">
+          <view class="_div data-v-dd596a06 item-input">
+            <input type="password" id="password" placeholder="密码" class="_input data-v-dd596a06" />
+          </view>
+        </view>
+        <view class="_li data-v-dd596a06">
+          <view class="_div data-v-dd596a06 item-input">
+            <input type="password" id="password1" placeholder="确认密码" class="_input data-v-dd596a06" />
+          </view>
+        </view>
+      </view>
+    </view>
+    <router-link to="/register" class="_router-link data-v-dd596a06">
+      <button class="_button data-v-dd596a06 btn-big2">注 册</button>
+    </router-link>
+    <view class="_div data-v-dd596a06 cancel-small">
+      <view class="_hr data-v-dd596a06"></view>
+      <view class="_br data-v-dd596a06"></view>
+      <router-link class="_router-link data-v-dd596a06 gray" to="/login">取消注册</router-link>
+    </view>
+  </view>
+</template>

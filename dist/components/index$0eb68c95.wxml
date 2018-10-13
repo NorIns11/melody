@@ -1,0 +1,105 @@
+<template name="index$0eb68c95">
+  <view class="_div data-v-6c6204ce container">
+    <view class="_div data-v-6c6204ce background">
+      <image src="@/img/bg_4.png" alt class="_img data-v-6c6204ce"></image>
+    </view>
+    <scroller ref="loadMore" class="_scroller data-v-6c6204ce institution-list">
+      <view class="_header data-v-6c6204ce header">
+        <view class="_div data-v-6c6204ce logo">
+          <view class="_i data-v-6c6204ce iconfont icon-logoRED"></view>
+        </view>
+        <view class="_div data-v-6c6204ce strongs">
+          <view class="_strong data-v-6c6204ce">MELODY</view>
+        </view>
+        <view class="_div data-v-6c6204ce header-router">
+          <router-link to="/login" class="_router-link data-v-6c6204ce">
+            <view class="_div data-v-6c6204ce">登录</view>
+          </router-link>
+        </view>
+      </view>
+      <view class="_div data-v-6c6204ce search">
+        <input value="{{message}}" bindinput="handleProxy" class="_input data-v-6c6204ce search-box" placeholder="请输入歌手/歌曲名" data-eventid="{{'0'}}" data-comkey="{{$k}}" />
+        <button class="_button data-v-6c6204ce search-btn">
+          <view class="_i data-v-6c6204ce iconfont icon-search"></view>搜索</button>
+      </view>
+      <swiper options="{{swiperOption}}" ref="swiper" class="_swiper data-v-6c6204ce">
+        <swiper-slide wx:key="index" key="{{index}}" wx:for="{{swiperSlides}}" wx:for-index="index" wx:for-item="slide" class="_swiper-slide data-v-6c6204ce">
+          <view class="_div data-v-6c6204ce">
+            <image v-lazy="{{slide.picture}}" class="_img data-v-6c6204ce lazy-img-fadein" lazy-progressive="true"></image>
+          </view>
+        </swiper-slide>
+        <view class="_div data-v-6c6204ce swiper-pagination" slot="pagination"></view>
+      </swiper>
+      <view class="_div data-v-6c6204ce nav_1">
+        <view class="_ul data-v-6c6204ce">
+          <view class="_li data-v-6c6204ce">
+            <router-link class="_router-link data-v-6c6204ce nav_11" to="/ranking">
+              <view class="_i data-v-6c6204ce iconfont icon-ranking"></view>
+              <view class="_div data-v-6c6204ce">排行榜</view>
+            </router-link>
+          </view>
+          <view class="_li data-v-6c6204ce">
+            <router-link class="_router-link data-v-6c6204ce nav_11" to="/allList">
+              <view class="_i data-v-6c6204ce iconfont icon-logo"></view>
+              <view class="_div data-v-6c6204ce">歌单</view>
+            </router-link>
+          </view>
+          <view class="_li data-v-6c6204ce">
+            <router-link class="_router-link data-v-6c6204ce nav_11" to="/allList">
+              <view class="_i data-v-6c6204ce iconfont icon-collection"></view>
+              <view class="_div data-v-6c6204ce">我喜欢</view>
+            </router-link>
+          </view>
+          <view class="_li data-v-6c6204ce">
+            <router-link class="_router-link data-v-6c6204ce nav_11" to="/my">
+              <view class="_i data-v-6c6204ce iconfont icon-my"></view>
+              <view class="_div data-v-6c6204ce">个人中心</view>
+            </router-link>
+          </view>
+        </view>
+      </view>
+      <view class="_div data-v-6c6204ce recommend">
+        <view class="_div data-v-6c6204ce rec_block">
+          <view class="_div data-v-6c6204ce blank1"></view>
+          <view class="_div data-v-6c6204ce rec_title">推荐歌曲</view>
+          <view class="_div data-v-6c6204ce rec_more">
+            <router-link class="_router-link data-v-6c6204ce gray" to="/allList">
+              <view class="_div data-v-6c6204ce">更多</view>
+            </router-link>
+          </view>
+        </view>
+        <view class="_div data-v-6c6204ce detail_2">
+          <view class="_div data-v-6c6204ce detail_21" wx:key="index" key="{{index}}" hidden="{{!(index < 3)}}" wx:for="{{songlist}}" wx:for-index="index" wx:for-item="item">
+            <image v-lazy="{{item.pic}}" bindtap="handleProxy" alt data-eventid="{{'1-'+index}}" data-comkey="{{$k}}" class="_img data-v-6c6204ce"></image>
+            <view class="_p data-v-6c6204ce text_14">
+              <nobr class="_nobr data-v-6c6204ce">{{ item.title }}</nobr>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="_div data-v-6c6204ce blank-6"></view>
+      <view class="_footer data-v-6c6204ce footer2">
+        <router-link to="/playing" class="_router-link data-v-6c6204ce">
+          <view class="_div data-v-6c6204ce cover">
+            <image src="@/img/cover.jpg" alt class="_img data-v-6c6204ce"></image>
+          </view>
+        </router-link>
+        <router-link to="/playing" class="_router-link data-v-6c6204ce">
+          <view class="_div data-v-6c6204ce baseMsg">
+            <view class="_div data-v-6c6204ce song">
+              <nobr class="_nobr data-v-6c6204ce">{{songnameMsg}}</nobr>
+            </view>
+            <view class="_div data-v-6c6204ce singer">
+              <nobr class="_nobr data-v-6c6204ce">{{singerMsg}}</nobr>
+            </view>
+          </view>
+        </router-link>
+        <view class="_div data-v-6c6204ce btns">
+          <view class="_i data-v-6c6204ce iconfont icon-pre"></view>
+          <view class="_i data-v-6c6204ce iconfont icon-stop"></view>
+          <view class="_i data-v-6c6204ce iconfont icon-next"></view>
+        </view>
+      </view>
+    </scroller>
+  </view>
+</template>

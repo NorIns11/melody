@@ -1,0 +1,36 @@
+<template name="index$1d457ba5">
+  <view class="_div data-v-7f0a1e06 container-ranking">
+    <view class="_header data-v-7f0a1e06 all-header">
+      <router-link class="_router-link data-v-7f0a1e06 back" to="/">
+        <view class="_i data-v-7f0a1e06 iconfont icon-back"></view>
+      </router-link>
+      <view class="_div data-v-7f0a1e06 text-title">个人中心</view>
+      <view class="_div data-v-7f0a1e06 blank-right"> </view>
+    </view>
+    <view class="_div data-v-7f0a1e06 blank-7"></view>
+    <view class="_div data-v-7f0a1e06 userinfo"> 用户名：{{usernameMsg}}
+      <view class="_br data-v-7f0a1e06"></view> 密码：{{passwordMsg}}
+      <view class="_br data-v-7f0a1e06"></view>
+      <view class="_br data-v-7f0a1e06"></view>
+      <view class="_div data-v-7f0a1e06 text-10" style="text-align:center;">您还未登录哦~</view>
+    </view>
+    <view class="_footer data-v-7f0a1e06 footer2">
+      <router-link to="/playing" class="_router-link data-v-7f0a1e06">
+        <view class="_div data-v-7f0a1e06 cover">
+          <image src="@/img/cover.jpg" alt class="_img data-v-7f0a1e06"></image>
+        </view>
+      </router-link>
+      <router-link to="/playing" class="_router-link data-v-7f0a1e06">
+        <view class="_div data-v-7f0a1e06 baseMsg">
+          <view class="_div data-v-7f0a1e06 song">{{songnameMsg}}</view>
+          <view class="_div data-v-7f0a1e06 singer">{{singerMsg}}</view>
+        </view>
+      </router-link>
+      <view class="_div data-v-7f0a1e06 btns">
+        <view class="_i data-v-7f0a1e06 iconfont icon-pre"></view>
+        <view bindtap="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}" class="_i data-v-7f0a1e06 {{playing ? 'iconfont icon-stop' : 'iconfont icon-play'}}"></view>
+        <view class="_i data-v-7f0a1e06 iconfont icon-next"></view>
+      </view>
+    </view>
+  </view>
+</template>

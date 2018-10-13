@@ -1,0 +1,33 @@
+<template name="index$468057b1">
+  <view class="_div data-v-507fd4ea container-play">
+    <view class="_header data-v-507fd4ea all-header">
+      <router-link class="_router-link data-v-507fd4ea back" to="/">
+        <view class="_i data-v-507fd4ea iconfont icon-back"></view>
+      </router-link>
+      <view class="_div data-v-507fd4ea baseMsg1">
+        <view class="_div data-v-507fd4ea song">
+          <nobr class="_nobr data-v-507fd4ea">{{this.$route.params.title}}</nobr>
+        </view>
+        <view class="_div data-v-507fd4ea singer">
+          <nobr class="_nobr data-v-507fd4ea">{{this.$route.params.author}}</nobr>
+        </view>
+      </view>
+      <view class="_div data-v-507fd4ea collet">
+        <view class="_i data-v-507fd4ea iconfont icon-collect"></view>
+      </view>
+    </view>
+    <view class="_div data-v-507fd4ea blank-7"></view>
+    <audio id="audio_player" src loop="loop" autoplay="autoplay" class="_audio data-v-507fd4ea"></audio>
+    <view class="_div data-v-507fd4ea content-playing"> {{lrc}} </view>
+    <view class="_div data-v-507fd4ea blank-6"></view>
+    <view class="_div data-v-507fd4ea footer1">
+      <view class="_i data-v-507fd4ea iconfont icon-listLoop"></view>
+      <view class="_div data-v-507fd4ea middle">
+        <view class="_i data-v-507fd4ea iconfont icon-pre"></view>
+        <view bindtap="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}" class="_i data-v-507fd4ea {{playing ? 'iconfont icon-stop' : 'iconfont icon-play'}}"></view>
+        <view class="_i data-v-507fd4ea iconfont icon-next"></view>
+      </view>
+      <view class="_i data-v-507fd4ea iconfont icon-list"></view>
+    </view>
+  </view>
+</template>

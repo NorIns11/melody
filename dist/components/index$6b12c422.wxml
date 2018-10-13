@@ -1,0 +1,47 @@
+<template name="index$6b12c422">
+  <view class="_div data-v-7512415b container-collected">
+    <view class="_header data-v-7512415b all-header">
+      <router-link class="_router-link data-v-7512415b back" to="/">
+        <view class="_i data-v-7512415b iconfont icon-back"></view>
+      </router-link>
+      <view class="_div data-v-7512415b text-title">歌单</view>
+      <view class="_div data-v-7512415b blank-right"> </view>
+    </view>
+    <view class="_div data-v-7512415b blank-6"></view>
+    <view class="_div data-v-7512415b covers">
+      <image src="http://p3gbjsikb.bkt.clouddn.com/cover/collected.jpg" alt class="_img data-v-7512415b"></image>
+    </view>
+    <view class="_div data-v-7512415b all-list">
+      <view class="_div data-v-7512415b all-1" wx:key="index" key="{{index}}" wx:for="{{songlist}}" wx:for-index="index" wx:for-item="item">
+        <view class="_div data-v-7512415b numbers"> {{ index +1 }} </view>
+        <view class="_div data-v-7512415b all-12" bindtap="handleProxy" data-eventid="{{'0-'+index}}" data-comkey="{{$k}}">
+          <view class="_div data-v-7512415b text-12">
+            <nobr class="_nobr data-v-7512415b">{{ item.title }}</nobr>
+          </view>
+          <view class="_div data-v-7512415b text-10">
+            <nobr class="_nobr data-v-7512415b">{{ item.author }}</nobr>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="_div data-v-7512415b blank"></view>
+    <view class="_footer data-v-7512415b footer2">
+      <router-link to="/playing" class="_router-link data-v-7512415b">
+        <view class="_div data-v-7512415b cover">
+          <image src="@/img/cover.jpg" alt class="_img data-v-7512415b"></image>
+        </view>
+      </router-link>
+      <router-link to="/playing" class="_router-link data-v-7512415b">
+        <view class="_div data-v-7512415b baseMsg">
+          <view class="_div data-v-7512415b song">{{songnameMsg}}</view>
+          <view class="_div data-v-7512415b singer">{{singerMsg}}</view>
+        </view>
+      </router-link>
+      <view class="_div data-v-7512415b btns">
+        <view class="_i data-v-7512415b iconfont icon-pre"></view>
+        <view class="_i data-v-7512415b iconfont icon-stop"></view>
+        <view class="_i data-v-7512415b iconfont icon-next"></view>
+      </view>
+    </view>
+  </view>
+</template>

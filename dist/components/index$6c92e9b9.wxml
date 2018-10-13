@@ -1,0 +1,102 @@
+<template name="index$6c92e9b9">
+  <view class="_div data-v-769266f2 container-ranking">
+    <view class="_header data-v-769266f2 all-header">
+      <router-link class="_router-link data-v-769266f2 back" to="/">
+        <view class="_i data-v-769266f2 iconfont icon-back"></view>
+      </router-link>
+      <view class="_div data-v-769266f2 text-title">排行榜</view>
+      <view class="_div data-v-769266f2 blank-right"> </view>
+    </view>
+    <view class="_div data-v-769266f2 blank-7"></view>
+    <view class="_div data-v-769266f2 ranking-list">
+      <router-link class="_router-link data-v-769266f2 back" to="/popular">
+        <view class="_div data-v-769266f2 ranking-1">
+          <view class="_div data-v-769266f2 ranking-11">
+            <image src="http://y.gtimg.cn/music/common/upload/iphone_order_channel/toplist_4_300_212984792.jpg" alt class="_img data-v-769266f2"></image>
+          </view>
+          <view class="_div data-v-769266f2 ranking-r">
+            <view class="_div data-v-769266f2 ranking-12" wx:key="index1" key="{{index1}}" hidden="{{!(index1 < 3)}}" wx:for="{{songlist1}}" wx:for-index="index1" wx:for-item="item1">
+              <view class="_div data-v-769266f2 text-12">
+                <nobr class="_nobr data-v-769266f2">{{ index1 +1 }}.{{ item1.title }} - {{ item1.author }}</nobr>
+              </view>
+            </view>
+          </view>
+        </view>
+      </router-link>
+      <router-link class="_router-link data-v-769266f2 back" to="/hot">
+        <view class="_div data-v-769266f2 ranking-1">
+          <view class="_div data-v-769266f2 ranking-11">
+            <image src="http://y.gtimg.cn/music/common/upload/iphone_order_channel/toplist_26_300_212606735.jpg" alt class="_img data-v-769266f2"></image>
+          </view>
+          <view class="_div data-v-769266f2 ranking-r">
+            <view class="_div data-v-769266f2 ranking-12" wx:key="index2" key="{{index2}}" hidden="{{!(index2 < 3)}}" wx:for="{{songlist2}}" wx:for-index="index2" wx:for-item="item2">
+              <view class="_div data-v-769266f2 text-12">
+                <nobr class="_nobr data-v-769266f2">{{ index2 +1 }}.{{ item2.title }} - {{ item2.author }}</nobr>
+              </view>
+            </view>
+          </view>
+        </view>
+      </router-link>
+      <router-link class="_router-link data-v-769266f2 back" to="/new">
+        <view class="_div data-v-769266f2 ranking-1">
+          <view class="_div data-v-769266f2 ranking-11">
+            <image src="http://y.gtimg.cn/music/common/upload/iphone_order_channel/toplist_27_300_212984792.jpg" alt class="_img data-v-769266f2"></image>
+          </view>
+          <view class="_div data-v-769266f2 ranking-r">
+            <view class="_div data-v-769266f2 ranking-12" wx:key="index3" key="{{index3}}" hidden="{{!(index3 < 3)}}" wx:for="{{songlist3}}" wx:for-index="index3" wx:for-item="item3">
+              <view class="_div data-v-769266f2 text-12">
+                <nobr class="_nobr data-v-769266f2">{{ index3 +1 }}.{{ item3.title }} - {{ item3.author }}</nobr>
+              </view>
+            </view>
+          </view>
+        </view>
+      </router-link>
+      <router-link class="_router-link data-v-769266f2 back" to="/online">
+        <view class="_div data-v-769266f2 ranking-1">
+          <view class="_div data-v-769266f2 ranking-11">
+            <image src="http://y.gtimg.cn/music/common/upload/iphone_order_channel/toplist_28_300_212437019.jpg" alt class="_img data-v-769266f2"></image>
+          </view>
+          <view class="_div data-v-769266f2 ranking-r">
+            <view class="_div data-v-769266f2 ranking-12" wx:key="index4" key="{{index4}}" hidden="{{!(index4 < 3)}}" wx:for="{{songlist4}}" wx:for-index="index4" wx:for-item="item4">
+              <view class="_div data-v-769266f2 text-12">
+                <nobr class="_nobr data-v-769266f2">{{ index4 +1 }}.{{ item4.title }} - {{ item4.author }}</nobr>
+              </view>
+            </view>
+          </view>
+        </view>
+      </router-link>
+      <router-link class="_router-link data-v-769266f2 back" to="/euramerican">
+        <view class="_div data-v-769266f2 ranking-1">
+          <view class="_div data-v-769266f2 ranking-11">
+            <image src="http://y.gtimg.cn/music/common/upload/iphone_order_channel/toplist_3_300_212913234.jpg" alt class="_img data-v-769266f2"></image>
+          </view>
+          <view class="_div data-v-769266f2 ranking-r">
+            <view class="_div data-v-769266f2 ranking-12" wx:key="index5" key="{{index5}}" hidden="{{!(index5 < 3)}}" wx:for="{{songlist5}}" wx:for-index="index5" wx:for-item="item5">
+              <view class="_div data-v-769266f2 text-12">
+                <nobr class="_nobr data-v-769266f2">{{ index5 +1 }}.{{ item5.title }} - {{ item5.author }}</nobr>
+              </view>
+            </view>
+          </view>
+        </view>
+      </router-link>
+    </view>
+    <view class="_footer data-v-769266f2 footer2">
+      <router-link to="/playing" class="_router-link data-v-769266f2">
+        <view class="_div data-v-769266f2 cover">
+          <image src="@/img/cover.jpg" alt class="_img data-v-769266f2"></image>
+        </view>
+      </router-link>
+      <router-link to="/playing" class="_router-link data-v-769266f2">
+        <view class="_div data-v-769266f2 baseMsg">
+          <view class="_div data-v-769266f2 song">{{songnameMsg}}</view>
+          <view class="_div data-v-769266f2 singer">{{singerMsg}}</view>
+        </view>
+      </router-link>
+      <view class="_div data-v-769266f2 btns">
+        <view class="_i data-v-769266f2 iconfont icon-pre"></view>
+        <view class="_i data-v-769266f2 iconfont icon-stop"></view>
+        <view class="_i data-v-769266f2 iconfont icon-next"></view>
+      </view>
+    </view>
+  </view>
+</template>

@@ -1,0 +1,25 @@
+{
+  "pages": [
+    "pages/login/main",
+    "pages/allList/main",
+    "pages/collected/main",
+    "pages/counter/main",
+    "pages/euramerican/main",
+    "pages/hot/main",
+    "pages/index/main",
+    "pages/logs/main",
+    "pages/my/main",
+    "pages/new/main",
+    "pages/online/main",
+    "pages/playing/main",
+    "pages/popular/main",
+    "pages/ranking/main",
+    "pages/register/main"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  }
+}

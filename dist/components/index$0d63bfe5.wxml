@@ -1,0 +1,47 @@
+<template name="index$0d63bfe5">
+  <view class="_div data-v-b0d8f1c4 container-collected">
+    <view class="_header data-v-b0d8f1c4 all-header">
+      <router-link class="_router-link data-v-b0d8f1c4 back" to="/ranking">
+        <view class="_i data-v-b0d8f1c4 iconfont icon-back"></view>
+      </router-link>
+      <view class="_div data-v-b0d8f1c4 text-title">欧美榜</view>
+      <view class="_div data-v-b0d8f1c4 blank-right"> </view>
+    </view>
+    <view class="_div data-v-b0d8f1c4 blank-6"></view>
+    <view class="_div data-v-b0d8f1c4 covers">
+      <image src="http://p3gbjsikb.bkt.clouddn.com/cover/collected.jpg" alt class="_img data-v-b0d8f1c4"></image>
+    </view>
+    <view class="_div data-v-b0d8f1c4 all-list">
+      <view class="_div data-v-b0d8f1c4 all-1" wx:key="index" key="{{index}}" wx:for="{{songlist}}" wx:for-index="index" wx:for-item="item">
+        <view class="_div data-v-b0d8f1c4 numbers"> {{ index +1 }} </view>
+        <view class="_div data-v-b0d8f1c4 all-12" bindtap="handleProxy" data-eventid="{{'0-'+index}}" data-comkey="{{$k}}">
+          <view class="_div data-v-b0d8f1c4 text-12">
+            <nobr class="_nobr data-v-b0d8f1c4">{{ item.title }}</nobr>
+          </view>
+          <view class="_div data-v-b0d8f1c4 text-10">
+            <nobr class="_nobr data-v-b0d8f1c4">{{ item.author }}</nobr>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="_div data-v-b0d8f1c4 blank"></view>
+    <view class="_footer data-v-b0d8f1c4 footer2">
+      <router-link to="/playing" class="_router-link data-v-b0d8f1c4">
+        <view class="_div data-v-b0d8f1c4 cover">
+          <image src="@/img/cover.jpg" alt class="_img data-v-b0d8f1c4"></image>
+        </view>
+      </router-link>
+      <router-link to="/playing" class="_router-link data-v-b0d8f1c4">
+        <view class="_div data-v-b0d8f1c4 baseMsg">
+          <view class="_div data-v-b0d8f1c4 song">{{songnameMsg}}</view>
+          <view class="_div data-v-b0d8f1c4 singer">{{singerMsg}}</view>
+        </view>
+      </router-link>
+      <view class="_div data-v-b0d8f1c4 btns">
+        <view class="_i data-v-b0d8f1c4 iconfont icon-pre"></view>
+        <view class="_i data-v-b0d8f1c4 iconfont icon-stop"></view>
+        <view class="_i data-v-b0d8f1c4 iconfont icon-next"></view>
+      </view>
+    </view>
+  </view>
+</template>
